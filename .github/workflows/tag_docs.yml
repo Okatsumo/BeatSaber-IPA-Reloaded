@@ -35,7 +35,7 @@ jobs:
       - name: Log in to package source
         shell: pwsh
         run: |
-            dotnet nuget add source --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }} `
+            dotnet nuget add source --username ${{ github.actor }} --password ${{ secrets.NUGET_AUTH_TOKEN }} `
             --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Atlas-Rhythm/index.json"
       - name: Clear Nuget Cache
         run: dotnet nuget locals all --clear
